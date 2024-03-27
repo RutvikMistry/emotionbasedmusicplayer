@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+
+<html>
+<body>	
+
+<form method="POST" action=''>
+<table>
+		{% for row in tracks1 %}
+				<tr>
+            <td>Track no.</td>
+            <td>{{row.1}}</td>
+        	</tr>
+        	<tr>
+            <td>Track name.</td> 
+            <td>{{row.2}}</td>
+        </tr>
+        <tr>
+        	<td>Current mood:</td>
+			<td>{{row.9}}</td>
+			</tr>
+		</table>
+			<td>
+			<label class="heading">Add in:</label>
+			<input type="radio" name="mood" value="Happy"><label>Happy</label>
+			<input type="radio" name="mood" value="Sad"><label>Sad</label>
+			<input type="radio" name="mood" value="Surprise"><label>Surprise</label>
+			<input type="radio" name="mood" value="Angry"><label>Angry</label>
+			<input type="radio" name="mood" value="Neutral"><label>Neutral</label>
+			<button name="subject" type="submit" value="search">Go</button>
+			</td>
+		{% endfor %}
+</form>
+
+</body>
+</html>
+
+{% endblock %}

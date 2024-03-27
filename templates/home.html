@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}	
+<!doctype html>
+<html lang="en">
+  <head>       
+
+    <style>
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+
+/* selected link */
+a:active {
+  color: white;
+} 
+
+body{
+  background-image:url( https://www.xtrafondos.com/en/descargar.php?id=3844&resolucion=2560x1440);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.frame{
+  position: absolute;
+  margin: 24% 85%;
+
+}
+div.words{
+margin-left: 69%;
+margin-top: 25%;
+font-size: 25px;
+}
+div.words2{
+margin-top: -18%;
+margin-left: 10%;
+color: white;
+font-size: 50px;
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="frame">
+  <form action="/pythonlogin/player">
+     <a href="{{url_for('player')}}"><span style="font-size: 250%"><i class="fa fa-camera" aria-hidden="true"></i></span></a>
+    </form>
+  </div>
+  <div class="words">
+    <p style="color:white">Click here to listen</p>
+  </div>
+  <div class="words2">
+<p><b>THE</b></p>
+<p><b>REAL</p><b></p>
+<p><b>SOUND</p><b></p>
+  </div>
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block title %}display{% endblock %}
+
+{% block content %}
+
+<html>
+<head>
+    <style>
+        td{
+            padding-right:9px; 
+        }
+        
+.playlist--list {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 0;
+  font-family: Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 0.95;
+  color: #565D64;
+}
+.playlist--list td {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  padding: 15px 10px;
+  background: #ffffff;
+  border: 1px solid #dbe3e8;
+  border-top: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.playlist--list td:first-child {
+  border-top: 1px solid #dbe3e8;
+}
+.playlist--list1 a{
+    text-decoration: none;
+    color: #black;
+}
+.playlist--list1 a:hover {
+  color: hotpink;
+}
+.playlist--list1 .active {
+  background-color: #CCDADE;
+  color: #565D64;
+}
+div.playlist{
+    align-content: left;
+  margin: 11px;
+}
+
+    </style>
+</head>
+<body>
+<form method="POST" action=''>
+<table>
+    <div class="playlist">
+    <tr class='playlist--list'>
+            <td> No. </td>
+            <td> Title </td>
+            <td> Emotion </td>&nbsp;
+            <td> Action </td>
+    </tr>
+{% for row in tracks %}
+<tr class='playlist--list'>
+    <ul class='playlist--list'>
+    <td> {{row.1}} </td>
+    <td> {{row.2}} </td>
+    <td> {{row.9}} </td>
+    <td class='playlist--list1'> <a href='/pythonlogin/edit/{{row.1}}'>Edit</a></td>
+</ul>
+</tr>
+{% endfor %}
+</div>
+</table>
+</form>
+</body>
+</html>
+{% endblock %}
